@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class GazeManager : MonoBehaviour
 {
     [SerializeField] private Image gazeHole;
     [SerializeField] private GameObject gazeHoleBG;
 
-    PointerEventData m_PointerEventData;
-    EventSystem m_EventSystem;
+    private PointerEventData m_PointerEventData;
+    private EventSystem m_EventSystem;
 
 
 
-    private GazeTarget nowGazeTarget;
+    [SerializeField]  private GazeTarget nowGazeTarget;
     private GazeTarget previousGazeTarget;
 
     public float gazeTime = 2f;
@@ -23,28 +24,42 @@ public class GazeManager : MonoBehaviour
 
     //[SerializeField] private Slider slider;
 
+    private void Start()
+    {
+        m_EventSystem = EventSystem.current;
+        m_PointerEventData = new PointerEventData(m_EventSystem);
+        m_PointerEventData.button = PointerEventData.InputButton.Left;
+        gazeHole.fillAmount = 0;
+        gazeHoleBG.SetActive(false);
+    }
+
+    private void Update()
+    {
+
+        
+    }
 
 
 
     private void FixedUpdate()
     {
-        RaycastHit raycastHit;
+        m_PointerEventData.position = new Vector2(Screen.width / 2, Screen.height / 2);
+        List<RaycastResult> rayResults = new List<RaycastResult>();
+        m_EventSystem.RaycastAll(m_PointerEventData, rayResults);
 
-        m_PointerEventData = new PointerEventData(m_EventSystem);
-        m_PointerEventData.position = new Vector2(0, 0);
-        List<RaycastResult> results = new List<RaycastResult>();
-        
-
-
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out raycastHit, 400f))
+        if (rayResults.Count > 0)
         {
+            foreach (var result in rayResults)
+            {
+                print(result.gameObject.name);
+                if( result.gameObject.GetComponent<GazeTarget>() == null)
+                
+                    continue;
 
-
-
-
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * raycastHit.distance, Color.yellow);
-            //Debug.Log("Hit : " + raycastHit.transform.name);
-            nowGazeTarget = raycastHit.transform.GetComponent<GazeTarget>();
+                nowGazeTarget = result.gameObject.GetComponent<GazeTarget>();
+                break;
+               
+            }
             if (nowGazeTarget != null && previousGazeTarget != nowGazeTarget)
             {
                 nowGazeTarget.GazeEnter();
@@ -61,13 +76,14 @@ public class GazeManager : MonoBehaviour
                 timer += Time.deltaTime;
                 gazeHoleBG.SetActive(true);
                 gazeHole.fillAmount = timer / gazeTime;
-                //slider.value = Mathf.Lerp(0, 100, timer / gazeTime);
+               
                 if (timer >= gazeTime && !isGazeEndCalled)
                 {
 
                     timer = 0f;
-                    //slider.value = Mathf.Lerp(0, 100, timer / gazeTime);
+                    
                     isGazeEndCalled = true;
+                    nowGazeTarget.GazeDone();
                 }
             }
 
@@ -75,9 +91,10 @@ public class GazeManager : MonoBehaviour
         else
         {
             if (previousGazeTarget != null)
-                OnGazeExit();
-            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 500f, Color.white);
+               OnGazeExit();
+          
         }
+        
     }
 
     private void OnGazeExit()
@@ -89,6 +106,10 @@ public class GazeManager : MonoBehaviour
         gazeHoleBG.SetActive(false);
         isGazeEndCalled = false;
     }
+
+
+
+
 
 
 }

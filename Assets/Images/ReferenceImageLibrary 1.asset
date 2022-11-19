@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
-  m_Name: ReferenceImageLibrary
+  m_Name: ReferenceImageLibrary 1
   m_EditorClassIdentifier: 
-  m_GuidLow: 5454307656471445296
-  m_GuidHigh: 5808191267838424727
+  m_GuidLow: 4638750913088212841
+  m_GuidHigh: 4858524205244222859
   m_DataStore:
     m_Storage:
     - key: com.unity.xr.arcore
@@ -27,5 +27,5 @@ MonoBehaviour:
       m_GuidHigh: 12461904382201739737
     m_Size: {x: 0.15, y: 0.15}
     m_SpecifySize: 1
-    m_Name: ARWheel
+    m_Name: ARWheel2
     m_Texture: {fileID: 0}

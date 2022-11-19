@@ -5,6 +5,8 @@ using UnityEngine;
 public class DrivingGameSystem : MonoBehaviour
 {
     public static bool isGameStart = false;
+    public static bool isGameEnd = false;
+    
 
     public static void gameStart()
     {

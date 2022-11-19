@@ -4,9 +4,24 @@ using UnityEngine;
 
 public class CatchAndPutDown : MonoBehaviour
 {
-    public GameObject targetGood;
-    [SerializeField] private GameObject catchGood;
     
+    //[SerializeField] private GameObject targetGood;
+    [SerializeField] private ShoppingPlayerControl shoppingPlayerControl;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject catchGood;
+    [SerializeField] private GameObject targetGood;
+
+
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+        shoppingPlayerControl = player.GetComponent<ShoppingPlayerControl>();
+        transform.parent = player.transform;
+        targetGood = shoppingPlayerControl.GetTarget();
+    }
+
+
+
     private void Update()
     {
         CatchGood();
@@ -16,6 +31,7 @@ public class CatchAndPutDown : MonoBehaviour
     {
         if (catchGood != null)
             return;
+
         if (Vector3.Distance(transform.position, targetGood.transform.position) <0.3f)
         {
             catchGood = targetGood;
@@ -34,10 +50,13 @@ public class CatchAndPutDown : MonoBehaviour
         if (collider.gameObject.tag == "Cart")
         {
             print("down");
-            catchGood.transform.parent = null;
+            catchGood.transform.parent = player.transform;
             catchGood.AddComponent<Rigidbody>();
-            //catchGood = null;
+            shoppingPlayerControl.NextPoint();
+            targetGood = shoppingPlayerControl.GetTarget();
+            catchGood = null;
         }
     }
+
 
 }

@@ -17,16 +17,17 @@ public class ShoppingPlayerControl : MonoBehaviour
 
     public void NextPoint()
     {
-
+        print("points.Count");
         int previousPointCount = pointCount;
-        pointCount++;
-        targetCount ++;
+        
+        
         if(pointCount >= points.Count)
         {
             print("GameENd");
             return;
         }    
         pointCount ++;
+        targetCount++;
         StartCoroutine(MoveToNextPoint(previousPointCount, targetCount));
     }
 
@@ -40,11 +41,11 @@ public class ShoppingPlayerControl : MonoBehaviour
         float duration = 2;
         while (time < duration)
         {
-            transform.position = Vector3.Lerp(points[org].position, points[next].position, time / duration);
+            transform.position = new Vector3(0,0, Mathf.Lerp(points[org].position.z, points[next].position.z, time / duration));
             time += Time.deltaTime;
             yield return null;
         }
-        transform.position = points[next].position;
+        transform.position = new Vector3(0, 0, points[next].position.z);
        
 
     }

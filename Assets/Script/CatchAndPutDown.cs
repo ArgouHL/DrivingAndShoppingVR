@@ -47,7 +47,7 @@ public class CatchAndPutDown : MonoBehaviour
     {
         print("hit");
         print(collider.gameObject.tag);
-        if (collider.gameObject.tag == "Cart")
+        if (collider.gameObject.tag == "Cart" && catchGood != null)
         {
             print("down");
             catchGood.transform.parent = player.transform;

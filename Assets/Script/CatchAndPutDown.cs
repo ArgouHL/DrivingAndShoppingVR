@@ -37,7 +37,7 @@ public class CatchAndPutDown : MonoBehaviour
             catchGood = targetGood;
             catchGood.transform.parent = transform;
             catchGood.transform.localPosition = Vector3.zero;
-            Destroy(catchGood.GetComponent<Rigidbody>());
+            Destroy(catchGood.GetComponent<Outline>());
         }
 
     }

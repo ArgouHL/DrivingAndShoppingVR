@@ -81,7 +81,7 @@ public class PlayerControl : MonoBehaviour
         _rotate = (_rotate > 180) ? _rotate - 360 : _rotate;
         //print("R" + _rotate);
 
-        if (-_rotate > 0 && transform.position.x >= 3 || -_rotate < 0 && transform.position.x <= -3)
+        if (-_rotate > 0 && transform.position.x >= 3.4f || -_rotate < 0 && transform.position.x <= -3.4f)
             return Vector3.zero;
 
         Vector3 _move = new Vector3(-_rotate, 0, 0) * rotateSpeed;

@@ -69,6 +69,7 @@ public class PlayerControl : MonoBehaviour
         {
             speed = maxSpeed;
         }
+        print("speedup");
 
     }
 

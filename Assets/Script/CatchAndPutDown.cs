@@ -22,15 +22,16 @@ public class CatchAndPutDown : MonoBehaviour
 
 
 
-    private void Update()
+    private void Start()
     {
-        CatchGood();
+        StartCoroutine("CatchGoodCoroutine");
     }
 
     private void CatchGood()
     {
-        if (catchGood != null)
+        if (catchGood != null || targetGood == null)
             return;
+        
 
         if (Vector3.Distance(transform.position, targetGood.transform.position) <0.3f)
         {
@@ -51,6 +52,7 @@ public class CatchAndPutDown : MonoBehaviour
         {
             print("down");
             catchGood.transform.parent = player.transform;
+            catchGood.AddComponent<MeshCollider>().convex= true;
             catchGood.AddComponent<Rigidbody>();
             shoppingPlayerControl.NextPoint();
             targetGood = shoppingPlayerControl.GetTarget();
@@ -58,5 +60,13 @@ public class CatchAndPutDown : MonoBehaviour
         }
     }
 
+    private IEnumerator CatchGoodCoroutine()
+    {
+        while(!ShoppingGameSystem.isGetGameEnd)
+        {
+            CatchGood();
+            yield return null;
+        }
+    }
 
 }

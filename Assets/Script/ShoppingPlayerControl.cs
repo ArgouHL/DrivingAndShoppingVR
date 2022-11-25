@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class ShoppingPlayerControl : MonoBehaviour
 {
-   public List<Transform> points;
-    public List<GameObject> targets;
+
+    [SerializeField] private float moveSpeed;
+    public List<ShelfTarget> Shelfs;
+
 
     private int targetCount = 0;
     private int pointCount = 0;
 
-
+    public void Awake()
+    {
+        
+    }
 
 
 
@@ -21,11 +26,17 @@ public class ShoppingPlayerControl : MonoBehaviour
         int previousPointCount = pointCount;
         
         
-        if(pointCount >= points.Count)
+        if(pointCount >= Shelfs.Count)
         {
             print("GameENd");
+            ShoppingGameSystem.GoToCasher();
             return;
-        }    
+        }
+        if (ShoppingGameSystem.isGetGameEnd)
+        {
+            return;
+        }
+            
         pointCount ++;
         targetCount++;
         StartCoroutine(MoveToNextPoint(previousPointCount, targetCount));
@@ -37,15 +48,16 @@ public class ShoppingPlayerControl : MonoBehaviour
     private IEnumerator MoveToNextPoint(int org,int next)
     {
         yield return new WaitForSeconds(0.5f);
-        float time = 0;
-        float duration = 2;
-        while (time < duration)
+        
+        while (transform.position.z < Shelfs[next].gameObject.transform.position.z)
         {
-            transform.position = new Vector3(0,0, Mathf.Lerp(points[org].position.z, points[next].position.z, time / duration));
-            time += Time.deltaTime;
-            yield return null;
+
+            transform.position = new Vector3(0, 0, transform.position.z + moveSpeed * Time.deltaTime);
+
+
+                yield return null;
         }
-        transform.position = new Vector3(0, 0, points[next].position.z);
+        transform.position = new Vector3(0, 0, Shelfs[next].gameObject.transform.position.z);
        
 
     }
@@ -53,10 +65,10 @@ public class ShoppingPlayerControl : MonoBehaviour
 
     public GameObject GetTarget()
     {
-        if (targetCount >= targets.Count)
+        if (targetCount >= Shelfs.Count)
             return null;
         print(targetCount);
-        return targets[targetCount];
+        return Shelfs[targetCount].GetTarget();
     }
 
 }

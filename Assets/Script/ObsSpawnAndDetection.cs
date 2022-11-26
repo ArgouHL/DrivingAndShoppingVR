@@ -14,7 +14,7 @@ public class ObsSpawnAndDetection : MonoBehaviour
 
 
 
-   [SerializeField] private GameObject obs;
+   [SerializeField] private GameObject[] obs;
     [SerializeField] private Transform endPoint;
     [SerializeField] private PlayerControl playerControl;
     private GameObject nowObs;
@@ -36,8 +36,9 @@ public class ObsSpawnAndDetection : MonoBehaviour
     {
         if(DrivingGameSystem.isGameEnd&&!endStreetSpawn)
         {
+            street.SetActive(false);
             endStreet.SetActive(true);
-               street = endStreet;
+            street = endStreet;
             endStreetSpawn = true;
             playerControl.SlowDoneAndStop(endPoint);
 
@@ -56,7 +57,7 @@ public class ObsSpawnAndDetection : MonoBehaviour
         print("spawn");
           
         obsCount++;
-        GameObject obsObject = Instantiate(obs, new Vector3(xPos, 0f, 100f), Quaternion.identity);
+        GameObject obsObject = Instantiate(obs[Random.Range(0,obs.Length)], new Vector3(xPos, 0f, 100f), Quaternion.identity);
         obsObject.AddComponent<ObsMove>().SetPlayerControl(playerControl);
         nowObs = obsObject;
     }

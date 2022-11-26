@@ -5,17 +5,23 @@ using UnityEngine;
 
 public class ObsSpawnAndDetection : MonoBehaviour
 {
-
+    private bool endStreetSpawn =false;
     private int obsCount = 0;
+    
+    [SerializeField] private GameObject endStreet;
 
-    [SerializeField] private GameObject obs;
-    [SerializeField] private GameObject shop;
+
+
+
+
+   [SerializeField] private GameObject obs;
+    [SerializeField] private Transform endPoint;
     [SerializeField] private PlayerControl playerControl;
     private GameObject nowObs;
 
     private void Awake()
     {
-        SpawnObs(3);
+        SpawnObs(-3);
 
     }
 
@@ -26,9 +32,23 @@ public class ObsSpawnAndDetection : MonoBehaviour
         check(nowObs);
     }
 
+    internal void streetTeleport(GameObject street)
+    {
+        if(DrivingGameSystem.isGameEnd&&!endStreetSpawn)
+        {
+            endStreet.SetActive(true);
+               street = endStreet;
+            endStreetSpawn = true;
+            playerControl.SlowDoneAndStop(endPoint);
+
+        }
+        street.transform.position = new Vector3(0, 0, 200);
+        street.GetComponent<RoadMovement>().check = true;
+    }
+
     private void SpawnObs(float xPos)
     {
-        if (obsCount > 20)
+        if (obsCount > 2)
         {
             gameStop();
             return;
@@ -44,10 +64,7 @@ public class ObsSpawnAndDetection : MonoBehaviour
     private void gameStop()
     {
         DrivingGameSystem.isGameEnd = true;
-        shop.transform.position = new Vector3(10, 3, 200);
-        shop.AddComponent<ShopMove>().playerControl = playerControl;
-        playerControl.SlowDoneAndStop(shop);
-
+      
     }
 
     private void check(GameObject o)

@@ -9,7 +9,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private SceceLoad sceceLoad;
 
-
+    [SerializeField]
     private float maxSpeed = 30;
     [SerializeField]
     private float speedFactor = 1;
@@ -100,29 +100,21 @@ public class PlayerControl : MonoBehaviour
     }
 
 
-    public void SlowDoneAndStop(GameObject shop)
+    public void SlowDoneAndStop(Transform endPoint)
     {
-        StartCoroutine("SlowDown", shop);
+        StartCoroutine("SlowDown", endPoint);
     }
 
-    private IEnumerator SlowDown(GameObject shop)
+    private IEnumerator SlowDown(Transform endPoint)
     {
-        float time = 0;
-        float duration = 2;
-        Vector3 orgPos = transform.position;
-        while (time < duration)
-        {
-            transform.position = new Vector3(Mathf.Lerp(orgPos.x, 3, time / duration), transform.position.y, transform.position.z);
-            time += Time.deltaTime;
-            yield return null;
-        }
-        while (shop.transform.position.z > 30)
+        StartCoroutine(ToRight());
+        while (endPoint.position.z > 80)
         {
             yield return null;
         }
-        while (shop.transform.position.z >0.5f)
+        while (endPoint.position.z >0.5f)
         {
-            speed = Mathf.Lerp(1, maxSpeed, shop.transform.position.z / 30);
+            speed = Mathf.Lerp(0, maxSpeed, endPoint.position.z / 80);
             yield return null;
         }
         while (speed>0)
@@ -137,6 +129,18 @@ public class PlayerControl : MonoBehaviour
 
     }
 
+    private IEnumerator ToRight()
+    {
+        float time = 0;
+        float duration = 5;
+        Vector3 orgPos = transform.position;
+        while (time < duration)
+        {
+            transform.position = new Vector3(Mathf.Lerp(orgPos.x, 3, time / duration), transform.position.y, transform.position.z);
+            time += Time.deltaTime;
+            yield return null;
+        }
+    }
 
 
 }

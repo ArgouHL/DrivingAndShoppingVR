@@ -24,4 +24,5 @@ public class CameraRotate : MonoBehaviour
         _camera.transform.rotation = Quaternion.Euler(YValue * rotationSpeed + _camera.transform.rotation.eulerAngles.x, XValue * rotationSpeed + _camera.transform.rotation.eulerAngles.y, 0f);
 
     }
+
 }

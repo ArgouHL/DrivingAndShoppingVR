@@ -5,13 +5,13 @@ using UnityEngine;
 public class RoadMovement : MonoBehaviour
 {
     [SerializeField] private PlayerControl playerControl;
-  
-  
-
-   
+    [SerializeField] private ObsSpawnAndDetection obsSpawnAndDetection;
+    [SerializeField] public bool check;
 
 
-    
+
+
+
 
 
     private void Update()
@@ -21,10 +21,13 @@ public class RoadMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(transform.position.z <=-200)
+
+        if (transform.position.z <= -200&& check)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, 200);
-           
+            check = false;
+            obsSpawnAndDetection.streetTeleport(gameObject);
+            
+
         }
     }
 }

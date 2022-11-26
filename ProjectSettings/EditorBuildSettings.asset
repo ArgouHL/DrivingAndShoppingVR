@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VR6DOFfWalking.unity
     guid: 17d6402472a8b2b4790c6b3c9b890fc1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Driving.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Shopping.unity
     guid: 4a4450a725ee17c42b438321845a709f
   m_configObjects:

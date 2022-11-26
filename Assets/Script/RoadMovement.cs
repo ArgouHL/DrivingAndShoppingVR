@@ -21,9 +21,9 @@ public class RoadMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(transform.position.z <=-250)
+        if(transform.position.z <=-200)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, 350);
+            transform.position = new Vector3(transform.position.x, transform.position.y, 200);
            
         }
     }

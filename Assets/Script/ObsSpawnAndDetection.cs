@@ -15,7 +15,7 @@ public class ObsSpawnAndDetection : MonoBehaviour
 
     private void Awake()
     {
-        SpawnObs(-3);
+        SpawnObs(3);
 
     }
 
@@ -28,7 +28,7 @@ public class ObsSpawnAndDetection : MonoBehaviour
 
     private void SpawnObs(float xPos)
     {
-        if (obsCount > 2)
+        if (obsCount > 20)
         {
             gameStop();
             return;

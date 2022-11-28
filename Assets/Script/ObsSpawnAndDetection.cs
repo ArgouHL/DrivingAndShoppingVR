@@ -32,18 +32,23 @@ public class ObsSpawnAndDetection : MonoBehaviour
         check(nowObs);
     }
 
-    internal void streetTeleport(GameObject street)
+    internal void streetTeleport(GameObject street,Vector3 orgPosition)
     {
         if(DrivingGameSystem.isGameEnd&&!endStreetSpawn)
         {
+            endStreet.transform.position = new Vector3(0, 0, 195);
             street.SetActive(false);
             endStreet.SetActive(true);
             street = endStreet;
             endStreetSpawn = true;
             playerControl.SlowDoneAndStop(endPoint);
-
+            
         }
-        street.transform.position = new Vector3(0, 0, 200);
+        else
+        {
+            street.transform.position = orgPosition + new Vector3(0, 0, 395); 
+        }
+       
         street.GetComponent<RoadMovement>().check = true;
     }
 

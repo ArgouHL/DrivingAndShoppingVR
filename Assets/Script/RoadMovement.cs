@@ -25,7 +25,7 @@ public class RoadMovement : MonoBehaviour
         if (transform.position.z <= -200&& check)
         {
             check = false;
-            obsSpawnAndDetection.streetTeleport(gameObject);
+            obsSpawnAndDetection.streetTeleport(gameObject,transform.position);
             
 
         }

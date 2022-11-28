@@ -12,6 +12,16 @@ public class DrivingGameSystem : MonoBehaviour
     private void Awake()
     {
         Initialization();
+
+
+
+    }
+
+    private void Start()
+    {
+
+        Application.targetFrameRate = 60;
+
     }
 
 

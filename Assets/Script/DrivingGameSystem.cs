@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 [System.Serializable]
@@ -12,15 +13,16 @@ public class DrivingGameSystem : MonoBehaviour
     private void Awake()
     {
         Initialization();
-
+       
 
 
     }
 
-    private void Start()
+    private void Update()
     {
+      
+        Application.targetFrameRate = 120;
 
-        Application.targetFrameRate = 60;
 
     }
 

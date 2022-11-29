@@ -6,12 +6,14 @@ using TMPro;
 public class ShowFps : MonoBehaviour
 {
     public TMP_Text text;
-     public float deltaTime;
- 
-     void Update () {
-         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
-         float fps = 1.0f / deltaTime;
-        text.text = Mathf.Ceil (fps).ToString ();
-     }
- }
+    public TMP_Text text2;
+    public float deltaTime;
+
+    void Update()
+    {
+
+        text.text = Mathf.Ceil(1 / Time.deltaTime).ToString();
+        text2.text = "Vsync : " + QualitySettings.vSyncCount.ToString() + ", target FPS : "+Application.targetFrameRate.ToString();
+    }
+}
 

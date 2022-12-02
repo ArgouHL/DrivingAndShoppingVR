@@ -9,7 +9,13 @@ public class ShowFps : MonoBehaviour
     public TMP_Text text2;
     public float deltaTime;
 
-    void Update()
+    private void Start()
+    {
+        InvokeRepeating("UpdateFPS", 0, 0.2f);
+    }
+
+
+    void UpdateFPS()
     {
 
         text.text = Mathf.Ceil(1 / Time.deltaTime).ToString();

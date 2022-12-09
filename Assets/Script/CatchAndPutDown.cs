@@ -17,7 +17,9 @@ public class CatchAndPutDown : MonoBehaviour
         player = GameObject.Find("Player");
         shoppingPlayerControl = player.GetComponent<ShoppingPlayerControl>();
         transform.parent = player.transform;
+        shoppingPlayerControl.GotoFirstPoint();
         targetGood = shoppingPlayerControl.GetTarget();
+       
     }
 
 

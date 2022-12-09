@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,28 +6,31 @@ using UnityEngine;
 public class ShoppingPlayerControl : MonoBehaviour
 {
 
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveTime;
     public List<ShelfTarget> Shelfs;
 
 
-    private int targetCount = 0;
-    private int pointCount = 0;
+    [SerializeField] private int targetCount = 0;
+    [SerializeField] private int pointCount = 0;
 
     public void Awake()
     {
-        
+
     }
 
-
+    public void GotoFirstPoint()
+    {
+        StartCoroutine(MoveToNextPoint(targetCount));
+    }
 
 
     public void NextPoint()
     {
         print("points.Count");
         int previousPointCount = pointCount;
-        
-        
-        if(pointCount >= Shelfs.Count)
+
+
+        if (pointCount >= Shelfs.Count)
         {
             print("GameENd");
             ShoppingGameSystem.GoToCasher();
@@ -36,32 +40,46 @@ public class ShoppingPlayerControl : MonoBehaviour
         {
             return;
         }
-            
-        pointCount ++;
+
+        pointCount++;
         targetCount++;
-        StartCoroutine(MoveToNextPoint(previousPointCount, targetCount));
+        StartCoroutine(MoveToNextPoint(targetCount));
     }
 
+    
 
 
-
-    private IEnumerator MoveToNextPoint(int org,int next)
+    private IEnumerator MoveToNextPoint(int next)
     {
         yield return new WaitForSeconds(0.5f);
-        
-        while (transform.position.z < Shelfs[next].gameObject.transform.position.z)
+        var targetPos = GetCorriderPos(Shelfs[next]);
+        float time = 0f;
+        var orgPos = transform.position;
+        while (time < moveTime)
         {
+            
 
-            transform.position = new Vector3(0, 0, transform.position.z + moveSpeed * Time.deltaTime);
 
+            transform.position = Vector3.Lerp(orgPos, targetPos, time / moveTime);
+            time += Time.deltaTime;
 
-                yield return null;
+            yield return null;
         }
-        transform.position = new Vector3(0, 0, Shelfs[next].gameObject.transform.position.z);
-       
+        transform.position = targetPos;
+
 
     }
 
+    private Vector3 GetCorriderPos(ShelfTarget shelfTarget)
+    {
+        var _pos = Vector3.zero;
+        var targerX = shelfTarget.gameObject.transform.position.x;
+        _pos.x = targerX > 0 ? targerX - 0.5f : targerX + 0.5f;
+        _pos.z = shelfTarget.gameObject.transform.position.z;
+
+
+        return _pos;
+    }
 
     public GameObject GetTarget()
     {

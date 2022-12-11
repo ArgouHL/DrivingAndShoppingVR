@@ -7,7 +7,7 @@ public class ObsSpawnAndDetection : MonoBehaviour
 {
     private bool endStreetSpawn =false;
     private int obsCount = 0;
-    
+    [SerializeField] private int obsNumbers=1;
     [SerializeField] private GameObject endStreet;
 
 
@@ -54,7 +54,7 @@ public class ObsSpawnAndDetection : MonoBehaviour
 
     private void SpawnObs(float xPos)
     {
-        if (obsCount > 2)
+        if (obsCount > obsNumbers)
         {
             gameStop();
             return;

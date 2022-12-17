@@ -8,8 +8,8 @@ public class ShoppingPlayerControl : MonoBehaviour
 
     [SerializeField] private float moveTime;
     public List<ShelfTarget> Shelfs;
-
-
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform casherPoint;
     [SerializeField] private int targetCount = 0;
     [SerializeField] private int pointCount = 0;
 
@@ -20,33 +20,37 @@ public class ShoppingPlayerControl : MonoBehaviour
 
     public void GotoFirstPoint()
     {
-        StartCoroutine(MoveToNextPoint(targetCount));
+
+        StartCoroutine("MoveToNextPoint", targetCount);
+
+
+
     }
 
 
     public void NextPoint()
     {
+
+
         print("points.Count");
         int previousPointCount = pointCount;
 
-
-        if (pointCount >= Shelfs.Count)
-        {
-            print("GameENd");
-            ShoppingGameSystem.GoToCasher();
-            return;
-        }
-        if (ShoppingGameSystem.isGetGameEnd)
-        {
-            return;
-        }
-
         pointCount++;
         targetCount++;
-        StartCoroutine(MoveToNextPoint(targetCount));
+
+
+        if (targetCount >= Shelfs.Count)
+        {
+            StartCoroutine("MoveToCasher");
+            
+
+        }
+        else
+
+            StartCoroutine(MoveToNextPoint(targetCount));
     }
 
-    
+
 
 
     private IEnumerator MoveToNextPoint(int next)
@@ -57,7 +61,7 @@ public class ShoppingPlayerControl : MonoBehaviour
         var orgPos = transform.position;
         while (time < moveTime)
         {
-            
+
 
 
             transform.position = Vector3.Lerp(orgPos, targetPos, time / moveTime);
@@ -69,6 +73,32 @@ public class ShoppingPlayerControl : MonoBehaviour
 
 
     }
+
+
+    private IEnumerator MoveToCasher()
+    {
+        float time = 0f;
+        var orgPos = transform.position;
+        while (time < moveTime)
+        {
+
+
+
+
+            time += Time.deltaTime;
+
+            yield return null;
+        }
+        transform.position = casherPoint.position;
+        player.rotation = Quaternion.Euler(0, -90, 0);
+        print("rotat");
+
+    }
+
+
+
+
+
 
     private Vector3 GetCorriderPos(ShelfTarget shelfTarget)
     {

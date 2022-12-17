@@ -78,9 +78,9 @@ MonoBehaviour:
   - {fileID: 2791002267752427458}
   - {fileID: 6954100306221078953}
   - {fileID: 3006200650503101347}
-  - {fileID: 8086965917204390652}
-  - {fileID: 4719273131692772229}
-  - {fileID: 8848642870321316109}
+  - {fileID: 1130184203481171330}
+  - {fileID: 5606696546298579935}
+  - {fileID: 2350041025860559455}
 --- !u!1001 &247224478408243411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,6 +133,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
@@ -140,11 +144,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: juicebox (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
 --- !u!4 &352661925344091960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+  m_PrefabInstance: {fileID: 247224478408243411}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1130184203481171330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
   m_PrefabInstance: {fileID: 247224478408243411}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &787459276289543277
@@ -211,12 +224,20 @@ PrefabInstance:
       value: -93.797
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 600e69f50abc4394290e990cdcd7fd43, type: 2}
     - target: {fileID: 919132149155446097, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
       propertyPath: m_Name
       value: box (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
@@ -277,12 +298,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -348,12 +377,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -414,12 +451,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -480,12 +525,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -551,12 +604,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -634,12 +695,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 06e7ac036415d28458ce025300fc389f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 06e7ac036415d28458ce025300fc389f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 600e69f50abc4394290e990cdcd7fd43, type: 2}
+      objectReference: {fileID: 2100000, guid: 37c1074463702e14c8fbd0bc9036eb75, type: 2}
     - target: {fileID: 919132149155446097, guid: 06e7ac036415d28458ce025300fc389f, type: 3}
       propertyPath: m_Name
       value: shelf_m
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06e7ac036415d28458ce025300fc389f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e7ac036415d28458ce025300fc389f, type: 3}
@@ -700,12 +769,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -766,12 +843,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -849,12 +934,20 @@ PrefabInstance:
       value: -96.17
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 600e69f50abc4394290e990cdcd7fd43, type: 2}
     - target: {fileID: 919132149155446097, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
       propertyPath: m_Name
       value: box
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
@@ -915,12 +1008,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -986,12 +1087,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -1069,12 +1178,20 @@ PrefabInstance:
       value: -83.795
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 600e69f50abc4394290e990cdcd7fd43, type: 2}
     - target: {fileID: 919132149155446097, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
       propertyPath: m_Name
       value: box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
@@ -1135,12 +1252,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -1201,12 +1326,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -1267,6 +1400,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
@@ -1274,8 +1411,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: juicebox (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+--- !u!1 &2350041025860559455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+  m_PrefabInstance: {fileID: 3196548639926148878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3158946866477086949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -1345,12 +1491,20 @@ PrefabInstance:
       value: -83.381
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 600e69f50abc4394290e990cdcd7fd43, type: 2}
     - target: {fileID: 919132149155446097, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
       propertyPath: m_Name
       value: box (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
@@ -1411,6 +1565,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
@@ -1418,11 +1576,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: juicebox (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
 --- !u!4 &5081516550741627237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+  m_PrefabInstance: {fileID: 4688129685706798734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5606696546298579935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
   m_PrefabInstance: {fileID: 4688129685706798734}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5602284668031006420
@@ -1477,6 +1644,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
@@ -1484,13 +1655,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: juicebox (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
---- !u!1 &4719273131692772229 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
-  m_PrefabInstance: {fileID: 5602284668031006420}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5347436612150595903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -1560,12 +1730,20 @@ PrefabInstance:
       value: -94.938
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 600e69f50abc4394290e990cdcd7fd43, type: 2}
     - target: {fileID: 919132149155446097, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
       propertyPath: m_Name
       value: box (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74b1bf2692752774cbb17a934669f63f, type: 3}
@@ -1626,12 +1804,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -1697,12 +1883,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -1763,6 +1957,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
@@ -1770,16 +1968,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: juicebox (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
 --- !u!4 &8180614323546872759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
-  m_PrefabInstance: {fileID: 8506692899126557788}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8848642870321316109 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
   m_PrefabInstance: {fileID: 8506692899126557788}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9006008991824060333
@@ -1834,6 +2031,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
@@ -1841,13 +2042,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: juicebox (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
---- !u!1 &8086965917204390652 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
-  m_PrefabInstance: {fileID: 9006008991824060333}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8895027126510090310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
@@ -1905,12 +2105,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3108307b62d607145a9634f886dcd2ec, type: 2}
     - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
       propertyPath: m_Name
       value: juicebox (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d726779b43f0e49953ce42f32dda78, type: 3}

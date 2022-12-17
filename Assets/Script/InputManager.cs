@@ -18,6 +18,7 @@ public class InputManager : Singleton<InputManager>
 
     private void OnDisable()
     {
+        if (drivingPlayer != null)
         drivingPlayer.Disable();
     }
     public Vector2 WASD()

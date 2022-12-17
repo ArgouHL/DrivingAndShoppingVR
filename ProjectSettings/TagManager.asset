@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cart
+  - money
+  - plate
   layers:
   - Default
   - TransparentFX
@@ -12,7 +14,7 @@ TagManager:
   - ArImageObj
   - Water
   - UI
-  - 
+  - shopkeeper
   - 
   - 
   - 

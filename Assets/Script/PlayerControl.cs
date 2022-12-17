@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
 {
     [SerializeField]
     private SceceLoad sceceLoad;
+   
 
     [SerializeField]
     private float maxSpeed = 30;
@@ -22,13 +23,21 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private float deceleratSpeed = 15;
 
-
-
     [SerializeField] private GameObject steering;
 
+    [SerializeField] private CanvasGroup fade;
+    [SerializeField] private float fadeTime = 2;
 
-    //0 is left ,1 is right 
-    public static int playerLine = 0;
+    public void Awake()
+    {
+        StartCoroutine("FadeIn");
+    }
+
+    public void EndFade()
+    {
+        StartCoroutine("FadeOut");
+    }
+
 
 
 
@@ -123,7 +132,7 @@ public class PlayerControl : MonoBehaviour
             yield return null;
         }
         speed = 0;
-        yield return new WaitForSeconds(1);
+        yield return FadeOut();
         sceceLoad.Game2();
 
 
@@ -142,5 +151,36 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+
+    private IEnumerator FadeIn()
+    {
+        yield return new WaitForSeconds(1);
+        float time = 0f;
+
+        while (time < fadeTime)
+        {
+            fade.alpha = Mathf.Lerp(1, 0, time / fadeTime);
+           time += Time.deltaTime;
+            yield return null;
+        }
+
+
+
+    }
+
+    private IEnumerator FadeOut()
+    {
+        yield return new WaitForSeconds(1);
+        float time = 0f;
+        while (time < fadeTime)
+        {
+            fade.alpha = Mathf.Lerp(0, 1, time / fadeTime);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+
+
+    }
 
 }

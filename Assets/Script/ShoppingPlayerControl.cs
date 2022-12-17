@@ -3,19 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ShoppingPlayerControl : MonoBehaviour
 {
 
     [SerializeField] private float moveTime;
+    [SerializeField] private float fadeTime=1;
     public List<ShelfTarget> Shelfs;
     [SerializeField] private Transform player;
     [SerializeField] private Transform casherPoint;
     [SerializeField] private int targetCount = 0;
     [SerializeField] private int pointCount = 0;
+    public CatchAndPutDown catchAndPutDown;
+    [SerializeField] private CanvasGroup fade;
 
     public void Awake()
     {
+        StartCoroutine("FadeIn");
+    }
 
+    public void EndFade()
+    {
+        StartCoroutine("FadeOut");
     }
 
     public void GotoFirstPoint()
@@ -77,11 +86,12 @@ public class ShoppingPlayerControl : MonoBehaviour
 
     private IEnumerator MoveToCasher()
     {
+        yield return new WaitForSeconds(1);
         float time = 0f;
         var orgPos = transform.position;
-        while (time < moveTime)
+        while (time < fadeTime)
         {
-
+            fade.alpha = Mathf.Lerp(0, 1, time / fadeTime);
 
 
 
@@ -89,13 +99,61 @@ public class ShoppingPlayerControl : MonoBehaviour
 
             yield return null;
         }
+
+        catchAndPutDown.GetMoney();
         transform.position = casherPoint.position;
         player.rotation = Quaternion.Euler(0, -90, 0);
         print("rotat");
+        while (time > 0)
+        {
+            fade.alpha = Mathf.Lerp(0, 1, time / fadeTime);
+
+            time -= Time.deltaTime;
+
+            yield return null;
+        }
 
     }
 
+    private IEnumerator FadeIn()
+    {
+        yield return new WaitForSeconds(1);
+        float time = 0f;
+       
+        while (time < fadeTime)
+        {
+            fade.alpha = Mathf.Lerp(1, 0, time / fadeTime);
 
+
+
+            time += Time.deltaTime;
+
+            yield return null;
+        }
+
+       
+
+    }
+
+    private IEnumerator FadeOut()
+    {
+        yield return new WaitForSeconds(1);
+        float time = 0f;
+
+        while (time < fadeTime)
+        {
+            fade.alpha = Mathf.Lerp(0, 1, time / fadeTime);
+
+
+
+            time += Time.deltaTime;
+
+            yield return null;
+        }
+
+
+
+    }
 
 
 

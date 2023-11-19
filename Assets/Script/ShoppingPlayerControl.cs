@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class ShoppingPlayerControl : MonoBehaviour
@@ -16,7 +17,7 @@ public class ShoppingPlayerControl : MonoBehaviour
     [SerializeField] private int pointCount = 0;
     public CatchAndPutDown catchAndPutDown;
     [SerializeField] private CanvasGroup fade;
-
+    [SerializeField] private AudioSource correct;
     public void Awake()
     {
         StartCoroutine("FadeIn");
@@ -56,7 +57,7 @@ public class ShoppingPlayerControl : MonoBehaviour
         }
         else
 
-            StartCoroutine(MoveToNextPoint(targetCount));
+            StartCoroutine("MoveToNextPoint", targetCount);
     }
 
 
@@ -100,9 +101,11 @@ public class ShoppingPlayerControl : MonoBehaviour
             yield return null;
         }
 
-        catchAndPutDown.GetMoney();
+        
         transform.position = casherPoint.position;
         player.rotation = Quaternion.Euler(0, -90, 0);
+        catchAndPutDown = GameObject.FindGameObjectWithTag("hand").GetComponent<CatchAndPutDown>();
+        catchAndPutDown.GetMoney();
         print("rotat");
         while (time > 0)
         {
@@ -151,7 +154,7 @@ public class ShoppingPlayerControl : MonoBehaviour
             yield return null;
         }
 
-
+        SceneManager.LoadScene(3);
 
     }
 
@@ -163,7 +166,7 @@ public class ShoppingPlayerControl : MonoBehaviour
         var _pos = Vector3.zero;
         var targerX = shelfTarget.gameObject.transform.position.x;
         _pos.x = targerX > 0 ? targerX - 0.5f : targerX + 0.5f;
-        _pos.z = shelfTarget.gameObject.transform.position.z;
+        _pos.z = shelfTarget.gameObject.transform.position.z-0.1f;
 
 
         return _pos;
@@ -174,7 +177,12 @@ public class ShoppingPlayerControl : MonoBehaviour
         if (targetCount >= Shelfs.Count)
             return null;
         print(targetCount);
-        return Shelfs[targetCount].GetTarget();
+        return Shelfs[targetCount].GetGoodsTarget();
     }
 
+
+    public void PlayCorrectSound()
+    {
+        correct.Play();
+    }
 }

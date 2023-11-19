@@ -11,7 +11,7 @@ public class StartMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(5);
 
     }
     public void PlayGame2()

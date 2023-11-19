@@ -6,17 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/VR6DOFfWalking.unity
-    guid: 17d6402472a8b2b4790c6b3c9b890fc1
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/EntryScene.unity
     guid: 887eea9e77d6e4540aaae9158a655644
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Driving.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Shopping.unity
     guid: 4a4450a725ee17c42b438321845a709f
+  - enabled: 0
+    path: Assets/Scenes/DrivingAnimation.unity
+    guid: d5ed744ab96d82d45997df9ebf56ea22
+  - enabled: 0
+    path: Assets/Scenes/EndScene.unity
+    guid: 78b13ac0d8004ac458e212cd2c26f8ae
+  - enabled: 0
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 4e8649cf13c073546a169f4259c70fee
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 1fca467df0005ee4cab0e98ba853589d, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 003146b9c56a6b04687f0fa538a27edd, type: 2}

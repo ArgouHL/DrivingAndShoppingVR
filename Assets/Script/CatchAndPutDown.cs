@@ -17,13 +17,7 @@ public class CatchAndPutDown : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Player");
-        shoppingPlayerControl = player.GetComponent<ShoppingPlayerControl>();
-        shoppingPlayerControl.catchAndPutDown = GetComponent<CatchAndPutDown>();
-        transform.parent = player.transform;
-        shoppingPlayerControl.GotoFirstPoint();
-        targetGood = shoppingPlayerControl.GetTarget();
-
+        
 
     }
 
@@ -31,6 +25,14 @@ public class CatchAndPutDown : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.Find("Player");
+        shoppingPlayerControl = player.GetComponent<ShoppingPlayerControl>();
+
+        transform.parent = player.transform;
+        shoppingPlayerControl.GotoFirstPoint();
+        targetGood = shoppingPlayerControl.GetTarget();
+        moneyTarget = GameObject.Find("MoneyTarget").transform;
+
         StartCoroutine("CatchGoodCoroutine");
     }
 
@@ -42,6 +44,7 @@ public class CatchAndPutDown : MonoBehaviour
 
         if (Vector3.Distance(transform.position, targetGood.transform.position) < 0.3f)
         {
+            shoppingPlayerControl.PlayCorrectSound();
             catchGood = targetGood;
             catchGood.transform.parent = transform;
             catchGood.transform.localPosition = Vector3.zero;
@@ -68,6 +71,7 @@ public class CatchAndPutDown : MonoBehaviour
 
         if (collider.gameObject.tag == "plate" && catchGood != null)
         {
+            shoppingPlayerControl.PlayCorrectSound();
             print("moneydown");
             catchGood.transform.position = moneyTarget.transform.position;
             
@@ -86,12 +90,13 @@ public class CatchAndPutDown : MonoBehaviour
     public void GetMoney()
     {
         GameObject newMoney = Instantiate(money, transform);
-        newMoney.transform.localRotation = Quaternion.Euler(0, 90, 0);
+        newMoney.transform.localRotation = Quaternion.Euler(0, 90, 90);
         catchGood = newMoney;
     }
 
     private IEnumerator CatchGoodCoroutine()
     {
+        yield return new WaitForSeconds(2);
         while (!ShoppingGameSystem.isGetGameEnd)
         {
             CatchGood();

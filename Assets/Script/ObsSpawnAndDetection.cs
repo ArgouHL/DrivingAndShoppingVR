@@ -9,18 +9,19 @@ public class ObsSpawnAndDetection : MonoBehaviour
     private int obsCount = 0;
     [SerializeField] private int obsNumbers=1;
     [SerializeField] private GameObject endStreet;
+    [SerializeField] private AudioSource correct;
+    [SerializeField] private bool gameOn = true;
 
 
 
-
-
-   [SerializeField] private GameObject[] obs;
+    [SerializeField] private GameObject[] obs;
     [SerializeField] private Transform endPoint;
     [SerializeField] private PlayerControl playerControl;
     private GameObject nowObs;
 
     private void Awake()
     {
+        
         SpawnObs(-3);
 
     }
@@ -54,6 +55,7 @@ public class ObsSpawnAndDetection : MonoBehaviour
 
     private void SpawnObs(float xPos)
     {
+
         if (obsCount > obsNumbers)
         {
             gameStop();
@@ -62,8 +64,9 @@ public class ObsSpawnAndDetection : MonoBehaviour
         print("spawn");
           
         obsCount++;
-        GameObject obsObject = Instantiate(obs[Random.Range(0,obs.Length)], new Vector3(xPos, 0f, 100f), Quaternion.identity);
-        obsObject.AddComponent<ObsMove>().SetPlayerControl(playerControl);
+        GameObject obsObject = Instantiate(obs[Random.Range(0, obs.Length)], new Vector3(xPos, 0f, Random.Range(100f, 150f)), Quaternion.identity);
+        if (gameOn)
+            obsObject.AddComponent<ObsMove>().SetPlayerControl(playerControl);
         nowObs = obsObject;
     }
 
@@ -80,6 +83,7 @@ public class ObsSpawnAndDetection : MonoBehaviour
 
         if (o.transform.position.z < -0.5f)
         {
+            correct.Play();
             SpawnObs(RndOgsPos());
         }
         else if  (o.transform.position.z<30 && o.transform.position.x *transform.position.x >0 )

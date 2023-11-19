@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
+
 [System.Serializable]
 public class DrivingGameSystem : MonoBehaviour
 {
@@ -13,9 +14,9 @@ public class DrivingGameSystem : MonoBehaviour
     private void Awake()
     {
         Initialization();
+
+
        
-
-
     }
 
     private void Update()

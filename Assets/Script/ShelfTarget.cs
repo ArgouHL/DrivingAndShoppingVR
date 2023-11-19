@@ -8,7 +8,7 @@ public class ShelfTarget : MonoBehaviour
     [SerializeField] private GameObject[] goods;
     
 
-   public GameObject GetTarget()
+   public GameObject GetGoodsTarget()
     {
         var target = goods[Random.Range(0, goods.Length)];
         var outline = target.AddComponent<Outline>();
